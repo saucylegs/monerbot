@@ -52,5 +52,10 @@ module.exports = [
     "grongaboganls",
     "shumplings",
     "gringobringos",
-    "gungareas"
+    "gungareas",
+    "glingingarnars",
+    "shmigerjaloos",
+    "criblats",
+    "reykjaviks",
+    "dalabils"
 ];
