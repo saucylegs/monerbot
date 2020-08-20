@@ -1,0 +1,27 @@
+{
+  "name": "monerbot",
+  "version": "1.0.0",
+  "description": "Relatively simple Discord bot that pairs a random number with a random-made up currency. Also contains a feature to suggest a new currency to be added.",
+  "main": "monerbot-github.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saucylegs/monerbot.git"
+  },
+  "keywords": [
+    "discord",
+    "node"
+  ],
+  "author": "saucylegs",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/saucylegs/monerbot/issues"
+  },
+  "homepage": "https://github.com/saucylegs/monerbot#readme",
+  "dependencies": {
+    "discord.js": "^12.3.1",
+    "mysql": "^2.18.1"
+  }
+}
