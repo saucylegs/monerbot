@@ -1,7 +1,7 @@
 #!/usr/bin/env node
  // for systemd
 
-// Start with TOKEN='<discord bot token>' MYSQL_HOST='<host ip>' MYSQL_USER='<username>' MYSQL_PASSWORD='<password>' MYSQL_DATABASE='<database>' ./monerbot-github.js
+// Start with TOKEN='<discord bot token>' MYSQL_HOST='<host ip>' MYSQL_USER='<username>' MYSQL_PASSWORD='<password>' MYSQL_DATABASE='<database>' node ./monerbot-github.js
 
 'use strict';
 
