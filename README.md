@@ -29,7 +29,7 @@ npm install
 
 3. Start monerbot
 ```bash
-TOKEN='<discord bot token>' MYSQL_HOST='<host ip>' MYSQL_USER='<username>' MYSQL_PASSWORD='<password>' MYSQL_DATABASE='<database>' ./monerbot-github.js
+TOKEN='<discord bot token>' MYSQL_HOST='<host ip>' MYSQL_USER='<username>' MYSQL_PASSWORD='<password>' MYSQL_DATABASE='<database>' node ./monerbot-github.js
 ```
 
 You can omit the MySQL variables to disable the suggestions feature.
