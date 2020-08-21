@@ -33,8 +33,12 @@ client.on('message', message => {
             case "$moner":
                 // Here is the actual moner part
                 // Create a 1 in 3 chance for the amount to be negative
-                var sign = Math.floor(Math.random() * 3) === 0 ? -1 : 1;
-                amount = Math.floor(Math.random() * sign * 299) - 2;
+                if (Math.floor(Math.random() * 3) === 0) {
+                    // The moner value should be >1 and <300, or <-1 and >-300.
+                    amount = Math.floor(Math.random() * -299) - 2;
+                } else {
+                    amount = Math.floor(Math.random() * 299) + 2;
+                }
                 var cNum = Math.floor(Math.random() * cLength); // Choose an item from the array
                 var output = amount + " " + currency[cNum];
                 message.channel.send(output);
