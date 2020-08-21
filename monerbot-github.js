@@ -28,7 +28,7 @@ client.on('message', message => {
                 message.channel.send("__**MonerBot Commands**__\n`$moner` Main command. Outputs a random number with a random currency.\n`$moner help` Outputs the message you're looking at right now.\n`$moner count` Outputs the number of currencies that are currently in the bot.\n`$moner suggest CURRENCY` Use this to suggest a new currency to be added! Replace CURRENCY with your suggestion. Note that your currency will not be added right away; I have to approve them first so that the bot isn't filled with trash submissions");
                 break;
             case "$moner count":
-                message.channel.send("Currency count: ", cLength);
+                message.channel.send("Currency count: " + cLength);
                 break;
             case "$moner":
                 // Here is the actual moner part
