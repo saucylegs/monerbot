@@ -57,5 +57,7 @@ module.exports = [
     "shmigerjaloos",
     "criblats",
     "reykjaviks",
-    "dalabils"
+    "dalabils",
+    "gringotts",
+    "juggalos"
 ];
