@@ -1,5 +1,5 @@
 #!/usr/bin/env node
- // for systemd
+// for systemd
 
 // Start with TOKEN='<discord bot token>' MYSQL_HOST='<host ip>' MYSQL_USER='<username>' MYSQL_PASSWORD='<password>' MYSQL_DATABASE='<database>' node ./monerbot-github.js
 
@@ -15,6 +15,49 @@ var currency = require('./currencies');
 var cLength = currency.length;
 var amount = 0;
 
+// Embed for the Help command output
+const helpEmbed = {
+    color: 0x349e48,
+    title: "MonerBot Commands & Info",
+    thumbnail: {
+        url: "https://cdn.discordapp.com/avatars/737476809477587034/2694d750d43f34d3da332bbc18251774.png?size=256",
+    },
+    fields: [
+        {
+            name: "Commands",
+            value: "\u200b",
+        },
+        {
+            name: "$moner",
+            value: "Main command. Outputs a random number with a random currency.",
+        },
+        {
+            name: "$moner help",
+            value: "Outputs the message you're looking at right now.",
+        },
+        {
+            name: "$moner count",
+            value: "Outputs the number of currencies that are currently in the bot.",
+        },
+        {
+            name: "$moner suggest CURRENCY",
+            value: "Use this to suggest a new currency to be added! Replace CURRENCY with your suggestion. Note that your currency will not be added right away; I have to approve them first so that the bot isn't filled with trash submissions",
+        },
+        {
+            name: "\u200b",
+            value: "\u200b",
+        },
+        {
+            name: "Note for Moderators",
+            value: 'To ban someone from using MonerBot, give them a role called "0 moners" (name must be exact). This will prevent them from using all commands except $moner help.',
+        },
+        {
+            name: "Bot Info",
+            value: "[r/Moners Discord](https://discord.gg/zJbfhDu) | [Invite MonerBot](https://discord.com/api/oauth2/authorize?client_id=737476809477587034&permissions=68608&scope=bot) | [GitHub](https://github.com/saucylegs/monerbot) | Creator: Saucy#6942",
+        },
+    ],
+};
+
 client.on('ready', () => {
     console.log("Connected as ", client.user.tag);
     console.log("Currency count: ", cLength);
@@ -25,12 +68,24 @@ client.on('message', message => {
     if (regexTest === true) {
         switch (message.content.match(regex)[0].toLowerCase()) {
             case "$moner help":
-                message.channel.send("__**MonerBot Commands**__\n`$moner` Main command. Outputs a random number with a random currency.\n`$moner help` Outputs the message you're looking at right now.\n`$moner count` Outputs the number of currencies that are currently in the bot.\n`$moner suggest CURRENCY` Use this to suggest a new currency to be added! Replace CURRENCY with your suggestion. Note that your currency will not be added right away; I have to approve them first so that the bot isn't filled with trash submissions");
+                message.channel.send({embed:helpEmbed});
                 break;
             case "$moner count":
+                if (message.member) {
+                    if (message.member.roles.cache.some(role => role.name === '0 moners')) {
+                        message.channel.send("❌ A server moderator has banned you from using MonerBot.");
+                        break;
+                    }
+                }
                 message.channel.send("Currency count: " + cLength);
                 break;
             case "$moner":
+                if (message.member) {
+                    if (message.member.roles.cache.some(role => role.name === '0 moners')) {
+                        message.channel.send("❌ A server moderator has banned you from using MonerBot.");
+                        break;
+                    }
+                }
                 // Here is the actual moner part
                 // Create a 1 in 3 chance for the amount to be negative
                 if (Math.floor(Math.random() * 3) === 0) {
@@ -44,6 +99,12 @@ client.on('message', message => {
                 message.channel.send(output);
                 break;
             default:
+                if (message.member) {
+                    if (message.member.roles.cache.some(role => role.name === '0 moners')) {
+                        message.channel.send("❌ A server moderator has banned you from using MonerBot.");
+                        break;
+                    }
+                }
                 if (suggestRegex.test(message.content) &&
                     process.env.MYSQL_HOST &&
                     process.env.MYSQL_USER &&
