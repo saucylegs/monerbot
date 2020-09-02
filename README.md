@@ -10,6 +10,9 @@ Bot invite link: https://discord.com/api/oauth2/authorize?client_id=737476809477
 
 `$moner help` - Full list of commands
 
+## Banning someone from using MonerBot
+To ban someone from using MonerBot, give them a role called "0 moners" (name must be exact). This will prevent them from using all commands except $moner help.
+
 ## How the bot works
 ### Dependencies
 The bot is written in JavaScript. To run, it requires node.js with the discord.js and mysql packages. The suggestions feature requires a pre-configured MySQL database.
