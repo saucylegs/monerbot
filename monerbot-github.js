@@ -58,9 +58,33 @@ const helpEmbed = {
     ],
 };
 
+function moner() {
+    // Here is the actual moner part
+    // Create a 1 in 3 chance for the amount to be negative
+    if (Math.floor(Math.random() * 3) === 0) {
+        // The moner value should be >1 and <300, or <-1 and >-300.
+        amount = Math.floor(Math.random() * -299) - 2;
+    } else {
+        amount = Math.floor(Math.random() * 299) + 2;
+    }
+    var cNum = Math.floor(Math.random() * cLength); // Choose an item from the array
+    var output = amount + " " + currency[cNum];
+    return output;
+}
+
+function playingMoner() {
+    // Generate a new moner for Playing... every 10 minutes
+    var output = moner();
+    client.user.setActivity(output);
+}
+
 client.on('ready', () => {
     console.log("Connected as ", client.user.tag);
     console.log("Currency count: ", cLength);
+
+    // Generate a new moner for Playing... every 10 minutes
+    playingMoner();
+    setInterval(playingMoner, 600000);
 })
 
 client.on('message', message => {
@@ -86,16 +110,7 @@ client.on('message', message => {
                         break;
                     }
                 }
-                // Here is the actual moner part
-                // Create a 1 in 3 chance for the amount to be negative
-                if (Math.floor(Math.random() * 3) === 0) {
-                    // The moner value should be >1 and <300, or <-1 and >-300.
-                    amount = Math.floor(Math.random() * -299) - 2;
-                } else {
-                    amount = Math.floor(Math.random() * 299) + 2;
-                }
-                var cNum = Math.floor(Math.random() * cLength); // Choose an item from the array
-                var output = amount + " " + currency[cNum];
+                var output = moner();
                 message.channel.send(output);
                 break;
             default:
