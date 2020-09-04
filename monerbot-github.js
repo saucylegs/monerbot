@@ -25,31 +25,11 @@ const helpEmbed = {
     fields: [
         {
             name: "Commands",
-            value: "\u200b",
-        },
-        {
-            name: "$moner",
-            value: "Main command. Outputs a random number with a random currency.",
-        },
-        {
-            name: "$moner help",
-            value: "Outputs the message you're looking at right now.",
-        },
-        {
-            name: "$moner count",
-            value: "Outputs the number of currencies that are currently in the bot.",
-        },
-        {
-            name: "$moner suggest CURRENCY",
-            value: "Use this to suggest a new currency to be added! Replace CURRENCY with your suggestion. Note that your currency will not be added right away; I have to approve them first so that the bot isn't filled with trash submissions",
-        },
-        {
-            name: "\u200b",
-            value: "\u200b",
+            value: "- `$moner` - Main command. Outputs a random number with a random currency. \n- `$moner help` - Outputs the message you're looking at right now. \n- `$moner count` - Outputs the number of currencies that are currently in the bot. \n- `$moner suggest CURRENCY` - Use this to suggest a new currency to be added! Replace CURRENCY with your suggestion. Note that your currency will not be added right away; I have to approve them first so that the bot isn't filled with trash submissions \n \u200b",
         },
         {
             name: "Note for Moderators",
-            value: 'To ban someone from using MonerBot, give them a role called "0 moners" (name must be exact). This will prevent them from using all commands except $moner help.',
+            value: 'To ban someone from using MonerBot, give them a role called "0 moners" (name must be exact). This will prevent them from using all commands except `$moner help`. \n \u200b',
         },
         {
             name: "Bot Info",
