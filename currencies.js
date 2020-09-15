@@ -62,5 +62,8 @@ module.exports = [
     "juggalos",
     "jablinskis",
     "glopkars",
-    "gugnaks"
+    "gugnaks",
+    "doobies",
+    "galleons",
+    "shillings"
 ];
