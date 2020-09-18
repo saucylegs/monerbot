@@ -65,5 +65,6 @@ module.exports = [
     "gugnaks",
     "doobies",
     "galleons",
-    "shillings"
+    "shillings",
+    "globglogabgalabs"
 ];
