@@ -67,5 +67,12 @@ module.exports = [
     "galleons",
     "shillings",
     "globglogabgalabs",
-    "trollars"
+    "trollars",
+    "gobbledegooks",
+    "bobux",
+    "quid",
+    "zinklonkies",
+    "moolahs",
+    "bolivars",
+    "₿"
 ];
