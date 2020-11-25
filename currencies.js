@@ -74,5 +74,6 @@ module.exports = [
     "zinklonkies",
     "moolahs",
     "bolivars",
-    "₿"
+    "₿",
+    "dollers"
 ];
