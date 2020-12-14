@@ -77,5 +77,8 @@ module.exports = [
     "₿",
     "dollers",
     "shargaloons",
-    "gabagooyas"
+    "gabagooyas",
+    "simoleons",
+    "grabbleflongs",
+    "slamongflobos"
 ];
