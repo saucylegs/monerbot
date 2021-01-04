@@ -80,5 +80,9 @@ module.exports = [
     "gabagooyas",
     "simoleons",
     "grabbleflongs",
-    "slamongflobos"
+    "slamongflobos",
+    "shmongrels",
+    "shekels",
+    "gazebos",
+    "spunchbobs"
 ];
